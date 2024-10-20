@@ -69,31 +69,35 @@
 }
 
 h1 {
-	@apply text-h1 font-bold;
+	@apply text-h1 font-bold leading-h1;
 }
 
 h2 {
-	@apply text-h2 font-bold;
+	@apply text-h2 font-bold leading-h2;
 }
 
 h3 {
-	@apply text-h3 font-bold;
+	@apply text-h3 font-bold leading-h3;
 }
 
 h4 {
-	@apply text-h4 font-bold;
+	@apply text-h4 font-bold leading-h4;
 }
 
 h5 {
-	@apply text-h5 font-semibold;
+	@apply text-h5 font-semibold leading-h5;
 }
 
 h6 {
-	@apply text-h6 font-semibold;
+	@apply text-h6 font-semibold leading-h6;
 }
 
 p {
-	@apply text-p font-medium;
+	@apply text-p font-medium leading-p;
+}
+
+label {
+	@apply text-label font-semibold leading-label;
 }
 
 ::-webkit-scrollbar {

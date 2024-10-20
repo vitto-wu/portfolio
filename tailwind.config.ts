@@ -23,14 +23,24 @@ const config = {
 				mono: ['var(--font-jetbrains-mono)']
 			},
 			fontSize: {
-				'h1': '5.61rem',
-				'h2': '4.209rem',
-				'h3': '3.157rem',
-				'h4': '2.369rem',
-				'h5': '1.777rem',
-				'h6': '1.333rem',
-				'p': '1rem',
-				'label': '0.875rem',
+				h1: 'clamp(4rem, 5vw + 1rem, 5.61rem)',
+				h2: 'clamp(3rem, 4vw + 0.6rem, 4.209rem)',
+				h3: 'clamp(2.25rem, 3vw + 0.4rem, 3.157rem)',
+				h4: 'clamp(1.68rem, 2.5vw + 0.3rem, 2.369rem)',
+				h5: 'clamp(1.26rem, 2vw + 0.2rem, 1.777rem)',
+				h6: 'clamp(0.945rem, 1.5vw + 0.1rem, 1.333rem)',
+				p: 'clamp(0.75rem, 1vw + 0.25rem, 1rem)',
+				label: 'clamp(0.60rem, 0.5vw + 0.25rem, 0.8rem)'
+			},
+			lineHeight: {
+				h1: 'clamp(3.6rem, 5vw + 0.9rem, 5.03rem)',
+				h2: 'clamp(2.7rem, 4vw + 0.54rem, 3.79rem)',
+				h3: 'clamp(2.03rem, 3vw + 0.36rem, 2.84rem)',
+				h4: 'clamp(1.51rem, 2.5vw + 0.27rem, 2.13rem)',
+				h5: 'clamp(1.13rem, 2vw + 0.18rem, 1.60rem)',
+				h6: 'clamp(0.85rem, 1.5vw + 0.09rem, 1.20rem)',
+				p: 'clamp(1.325rem, 1vw + 0.575rem, 1.7rem)',
+				label: 'clamp(0.84rem, 0.5vw + 0.3rem, 1.125rem)'
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -72,6 +82,9 @@ const config = {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'bw120': 'linear-gradient(120deg, #434343, #ffffff)'
 			},
 			keyframes: {
 				'accordion-down': {
