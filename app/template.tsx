@@ -32,7 +32,7 @@ const Template = ({ children }: { children: ReactNode }) => {
 		<>
 			<div className="pageTransition pointer-events-none fixed z-[100] flex h-screen w-screen flex-row">
 				{[...Array(numOfCol)].map((_, i) => {
-					return <div key={i} className="h-full w-full bg-red-200" />
+					return <div key={i} className="h-full w-full bg-[#c9c9be]" />
 				})}
 			</div>
 			<main>

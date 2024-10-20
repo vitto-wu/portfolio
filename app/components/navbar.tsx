@@ -3,20 +3,15 @@ import { fontSize, lineHeight } from '@/lib/tailwind-utils'
 import { cn } from '@/lib/utils'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import SplitText from 'gsap-trial/SplitText'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import TransitionLink from './animationUtils/transitionLink'
 import { animatePageOut } from '@/lib/animation'
 
-interface CustomDivElement extends HTMLDivElement {
-	splitText?: SplitText
-}
 
 const Navbar = () => {
 	gsap.registerPlugin(ScrollTrigger)
-	gsap.registerPlugin(SplitText)
 
 	const router = useRouter()
 	const pathname = usePathname()
@@ -24,7 +19,7 @@ const Navbar = () => {
 		pathname === '/projects' ? '/#contact' : `${pathname}/#contact`
 
 	const componentRef = useRef<HTMLDivElement>(null)
-	const nameRef = useRef<CustomDivElement>(null)
+	const nameRef = useRef<HTMLDivElement>(null)
 	const [windowWidth, setWindowWidth] = useState(0)
 	const [showNavbar, setShowNavbar] = useState(true)
 	const [desableHomeLink, setDesableHomeLink] = useState(pathname === '/')
@@ -52,29 +47,10 @@ const Navbar = () => {
 				setShowNavbar(self.direction === -1)
 			}
 		})
-
-		const splitText = new SplitText(nameRef.current, { type: 'chars' }) // [ ] SplitText plugin re-do
-		gsap.set(splitText.chars, {
-			display: 'inline-block'
-		})
-
-		if (nameRef.current) nameRef.current.splitText = splitText
 	}, [])
 
 	// Navbar name on hero page animation
 	const applyNameAnimations = (isForward: boolean) => {
-		const splitText = nameRef.current?.splitText || null
-
-		if (splitText) {
-			gsap.to(splitText.chars, {
-				fontSize: isForward ? fontSize['h1'] : fontSize['p'],
-				lineHeight: isForward ? lineHeight['h1'] : lineHeight['p'],
-				fontWeight: isForward ? 700 : 500,
-				stagger: 0.03,
-				duration: 1,
-				ease: 'power4.inOut'
-			})
-		}
 
 		// left : -4rem -> navbar x-padding
 		// top : -2rem -> navbar y-padding, -1.1rem -> gap-4 em /home/hero
@@ -167,29 +143,6 @@ const Navbar = () => {
 					VICTOR.WU
 				</p>
 			</TransitionLink>
-			{/* <p className="hidden select-none text-center md:block">{clock}</p>
-			<div className="flex flex-col items-end gap-1">
-				<TransitionLink href="/projects">
-					<p>PROJECTS</p>
-				</TransitionLink>
-
-				<p
-					onClick={(e) => {
-						e.preventDefault()
-						const contact =
-							document.getElementById('contactComponent')
-						contact
-							? contact.scrollIntoView({ behavior: 'smooth' })
-							: animatePageOut(contactHref, router)
-					}}
-					className="cursor-pointer"
-				>
-					CONTACT
-				</p>
-				<TransitionLink href="/about">
-					<p>ABOUT</p>
-				</TransitionLink>
-			</div> */}
 		</div>
 	)
 }
