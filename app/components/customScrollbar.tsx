@@ -148,7 +148,7 @@ const CustomScrollBar = ({
 
 	return (
 		<div
-			className={cn(
+			className={cn('CUSTOM_SCROLLBAR',
 				'scrollbar fixed right-1 top-0 z-[99] h-screen w-2 hidden md:block mix-blend-exclusion',
 				isDragging ? 'cursor-grabbing' : undefined
 			)}
@@ -165,10 +165,10 @@ const CustomScrollBar = ({
 				ref={scrollThumbRef}
 				onMouseDown={handleThumbMousedown}
 				className={cn(
-					'thumb absolute left-0 my-1 w-full cursor-grab rounded-full bg-white/50 transition-opacity duration-300 ease-in-out hover:opacity-100',
-					isDragging || isThumbMoving
+					'thumb absolute left-0 my-1 w-full cursor-grab rounded-full bg-white/50 transition-opacity duration-300 ease-in-out opacity-50 hover:opacity-100',
+					/* isDragging || isThumbMoving
 						? 'opacity-100 duration-0'
-						: 'opacity-0',
+						: 'opacity-0', */
 					isDragging ? 'cursor-grabbing' : undefined
 				)}
 				style={{

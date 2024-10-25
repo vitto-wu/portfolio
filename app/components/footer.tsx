@@ -51,7 +51,7 @@ const Footer = () => {
 	}, [])
 
 	return (
-		<div id='contactComponent' ref={footerRef} className={cn('md:-translate-y-96')}>
+		<div id='CONTACT' ref={footerRef} className={cn('md:-translate-y-96')}>
 			<Contact />
 			<div className="mx-4 flex flex-col gap-4 md:mx-12 md:gap-0 border-t">
 				<h3 className="select-none text-center font-mono md:text-h2"></h3>

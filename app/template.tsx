@@ -1,7 +1,7 @@
 'use client'
 
 import { animatePageIn } from '@/lib/animation'
-import { ReactNode, use, useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import Navbar from './components/navbar'
 
 const Template = ({ children }: { children: ReactNode }) => {
@@ -32,7 +32,9 @@ const Template = ({ children }: { children: ReactNode }) => {
 		<>
 			<div className="pageTransition pointer-events-none fixed z-[100] flex h-screen w-screen flex-row">
 				{[...Array(numOfCol)].map((_, i) => {
-					return <div key={i} className="h-full w-full bg-[#c9c9be]" />
+					return (
+						<div key={i} className="h-full w-full bg-[#c9c9be]" />
+					)
 				})}
 			</div>
 			<main>

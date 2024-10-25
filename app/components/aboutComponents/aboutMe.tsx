@@ -35,14 +35,15 @@ const AboutMe = () => {
 		})
 	}, [])
 
+	// TODO change color
 	return (
-		<div className="grid grid-cols-1 gap-32 py-64 lg:grid-cols-9 lg:gap-0">
+		<div id='ABOUT' className="grid grid-cols-1 gap-2 md:gap-32 pt-20 pb-32 md:mt-0 -mt-2 md:py-64 lg:grid-cols-9 lg:gap-0 relative bg-[#f2f2f2]">
 			<div
 				ref={aboutRef}
 				className="mt-12 flex flex-col gap-12 lg:col-span-4 lg:col-start-2 lg:-translate-y-[100px] lg:items-start"
 			>
-				<h1>ABOUT ME</h1>
-				<p className="w-3/4 text-justify font-mono font-medium">
+				<h1 className='text-center md:text-start'>About Me</h1>
+				<p className="px-4 md:p-0 md:w-3/4 text-justify font-mono font-medium">
 					Hello, I&apos;m Victor Wu, a fullstack developer and web
 					designer graduate in Computer Science from UNICAMP
 					(Universidade Estadual de Campinas). Passionated about
@@ -55,31 +56,27 @@ const AboutMe = () => {
 				ref={experencieRef}
 				className="mt-24 flex flex-col gap-12 lg:col-span-4 lg:col-start-6 lg:translate-y-[100px]"
 			>
-				<h1>Exprencies</h1>
-				<div className="flex flex-col font-mono">
+				<h1 className='text-center md:text-start'>Exprencies</h1>
+				<div className="px-4 md:p-0  flex flex-col font-mono">
 					<p className="mb-1">
-						{' '}
-						<span className="text-green-300">01-</span> IC/Unicamp -
+						<span className="text-yellow-500">01-</span> IC/Unicamp -
 						Lead Media & Brand Designer
 					</p>
 					<p className="mb-4 font-normal text-gray-400">
-						{' '}
 						07/2023 – 08/2023 – Campinas/SP (Remote)
 					</p>
 					<p className="mb-1">
-						<span className="text-green-300">02-</span> Funcamp -
+						<span className="text-yellow-500">02-</span> Funcamp -
 						Logo Designer
 					</p>
 					<p className="mb-4 font-normal text-gray-400">
-						{' '}
 						08/2023 – 10/2023 – Campinas/SP (Remote)
 					</p>
 					<p className="mb-1">
-						<span className="text-green-300">03-</span> Academic
+						<span className="text-yellow-500">03-</span> Academic
 						Project - Front-End Developer
 					</p>
 					<p className="mb-4 font-normal text-gray-400">
-						{' '}
 						04/2024 – 06/2024 - Campinas/SP (Remote)
 					</p>
 				</div>

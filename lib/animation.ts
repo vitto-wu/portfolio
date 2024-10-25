@@ -4,12 +4,16 @@ import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.share
 export const animatePageIn = () => {
 	const elements = document.querySelectorAll('.pageTransition > div')
 
-	gsap.to(elements, {
-		y: '100%',
-		stagger: 0.05,
-		duration: 0.8,
-		ease: 'power4.in'
-	})
+	gsap.fromTo(
+		elements,
+		{ y: 0 },
+		{
+			y: '100%',
+			stagger: 0.05,
+			duration: 0.8,
+			ease: 'power4.in'
+		}
+	)
 }
 
 export const animatePageOut = (href: string, router: AppRouterInstance) => {
@@ -24,7 +28,7 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
 	}) */
 	gsap.fromTo(
 		elements,
-		{ y: '100%' },
+		{ y: '200%' },
 		{
 			y: 0,
 			stagger: 0.05,
