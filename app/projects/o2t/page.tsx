@@ -6,7 +6,7 @@ const O2T = () => {
 		<Project.Root>
 			<Project.Hero
 				role={['frontend']}
-				tools={['photoshop']}
+				tools={['figma', 'next.js', 'tailwindcss']}
 				duration="apr 2024 - jun 2024"
 			/>
 			<Project.Content.Wrap>
@@ -14,7 +14,8 @@ const O2T = () => {
 					tags={['react', 'typescript', 'tailwindcss']}
 					projectName="olympics training tracker"
 				>
-					O2T is a web application designed for <b> Olympic athletes</b>, providing essential tools such as
+					O2T is a web application designed for{' '}
+					<b>Olympic athletes</b>, providing essential tools such as{' '}
 					<b>
 						workout tracking, health metric monitoring, and weekly
 						training planning
@@ -24,7 +25,11 @@ const O2T = () => {
 					performance and well-being.
 				</Project.Content.Header>
 				<Project.Content.Content>
-					<FullSizeImage src="/images/testImage.jpg" alt="test" />
+					<FullSizeImage
+						src="/images/O2T_HOME.png"
+						alt="test"
+						className="rounded-sm"
+					/>
 					<section className="grid grid-cols-1 gap-4 px-4 xl:grid-cols-5 xl:px-8">
 						<h4 className="mb-4 xl:col-span-2">The Problem</h4>
 						<div className="text-justify xl:col-span-3">
@@ -62,34 +67,22 @@ const O2T = () => {
 							alt="user flow"
 						/>
 						<FullSizeImage
-							src="/images/testImage.jpg"
+							src="/images/O2T_DASHBOARD.png"
 							className="rounded-sm"
 							alt="test"
 							caption="Dashboard Screen"
 						/>
 						<FullSizeImage
-							src="/images/testImage.jpg"
+							src="/images/O2T_Log.png"
 							className="rounded-sm"
 							alt="test"
 							caption="Workout Log Screen"
 						/>
 						<FullSizeImage
-							src="/images/testImage.jpg"
+							src="/images/O2T_METRICS.png"
 							className="rounded-sm"
 							alt="test"
 							caption="Health Metrics Screen"
-						/>
-						<FullSizeImage
-							src="/images/testImage.jpg"
-							className="rounded-sm"
-							alt="test"
-							caption="Profile"
-						/>
-						<FullSizeImage
-							src="/images/testImage.jpg"
-							className="rounded-sm"
-							alt="test"
-							caption="Tag"
 						/>
 					</section>
 					<section className="mb-8 grid grid-cols-1 gap-4 px-4 xl:grid-cols-5 xl:px-8">

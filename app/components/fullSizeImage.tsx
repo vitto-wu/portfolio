@@ -35,7 +35,12 @@ const FullSizeImage = forwardRef<HTMLDivElement, ImageProps>(
 					className
 				)}
 			>
-				<div className="IMG_WRAPPER absolute left-0 top-0 h-full w-full  select-none">
+				<div
+					className={cn(
+						'IMG_WRAPPER select-none',
+						fill && 'absolute left-0 top-0 w-full h-full'
+					)}
+				>
 					<Image
 						src={src}
 						alt={alt}

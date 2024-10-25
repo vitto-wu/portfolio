@@ -13,6 +13,7 @@ const BeforeFooter = ({ children }: { children: ReactElement }) => {
 	useGSAP(() => {
 		gsap.to(ref.current, {
 			scale: 0.90,
+			transformOrigin: 'top center',
 			scrollTrigger: {
 				trigger: ref.current,
 				start: 'bottom 75%',

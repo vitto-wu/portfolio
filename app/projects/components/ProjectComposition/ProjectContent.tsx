@@ -6,12 +6,13 @@ type HeaderContentProps = {
 	projectName: string
 }
 
+//TODO - add live site link
 const Header = ({ children, tags, projectName }: HeaderContentProps) => {
 	return (
 		<div className="top-0 flex flex-col justify-end gap-8 px-4 pt-24 xl:sticky xl:h-screen xl:w-1/3 xl:py-24 xl:pr-8">
-			<p className="-mb-6 font-mono text-gray-500">
+			{/* <p className="-mb-6 font-mono text-gray-500">
 				visit : <span className="text-green-400">live site ↗</span>
-			</p>
+			</p> */}
 			<h3 className="title font-sans font-bold uppercase">
 				{projectName}
 			</h3>
@@ -34,7 +35,7 @@ const Content = ({ children }: { children: React.ReactNode }) => {
 // TODO - add live site link
 const Wrap = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<div className="relative flex flex-col bg-green-300 pb-8 font-mono xl:flex-row xl:p-8">
+		<div className="relative flex flex-col bg-[#f2f2f2] pb-8 font-mono xl:flex-row xl:p-8">
 			{children}
 		</div>
 	)

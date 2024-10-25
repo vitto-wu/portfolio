@@ -37,13 +37,13 @@ const AboutMe = () => {
 
 	// TODO change color
 	return (
-		<div id='ABOUT' className="grid grid-cols-1 gap-2 md:gap-32 pt-20 pb-32 md:mt-0 -mt-2 md:py-64 lg:grid-cols-9 lg:gap-0 relative bg-[#f2f2f2]">
+		<div id='ABOUT' className="grid grid-cols-1 gap-2 pt-20 pb-32 lg:mt-0 -mt-2 lg:py-64 lg:grid-cols-9 lg:gap-0 relative bg-[#f2f2f2]">
 			<div
 				ref={aboutRef}
 				className="mt-12 flex flex-col gap-12 lg:col-span-4 lg:col-start-2 lg:-translate-y-[100px] lg:items-start"
 			>
-				<h1 className='text-center md:text-start'>About Me</h1>
-				<p className="px-4 md:p-0 md:w-3/4 text-justify font-mono font-medium">
+				<h1 className='text-center lg:text-start'>About Me</h1>
+				<p className="px-4 lg:p-0 lg:w-3/4 text-justify font-mono font-medium">
 					Hello, I&apos;m Victor Wu, a fullstack developer and web
 					designer graduate in Computer Science from UNICAMP
 					(Universidade Estadual de Campinas). Passionated about
@@ -56,8 +56,8 @@ const AboutMe = () => {
 				ref={experencieRef}
 				className="mt-24 flex flex-col gap-12 lg:col-span-4 lg:col-start-6 lg:translate-y-[100px]"
 			>
-				<h1 className='text-center md:text-start'>Exprencies</h1>
-				<div className="px-4 md:p-0  flex flex-col font-mono">
+				<h1 className='text-center lg:text-start'>Exprencies</h1>
+				<div className="px-4 lg:p-0 text-center lg:text-start flex flex-col font-mono">
 					<p className="mb-1">
 						<span className="text-yellow-500">01-</span> IC/Unicamp -
 						Lead Media & Brand Designer
