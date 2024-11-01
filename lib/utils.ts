@@ -12,7 +12,7 @@ export function splitText(element: React.RefObject<HTMLDivElement>) {
 	}
 
 	const textContent = element.current?.textContent || ''
-	const characters = textContent.split(/( )/).map((char, index) => {
+	const characters = textContent.split('').map((char, index) => {
 		const span = document.createElement('span')
 		span.textContent = char
 		span.className = 'char'

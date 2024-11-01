@@ -43,6 +43,8 @@ const config = {
 				label: 'clamp(0.84rem, 0.5vw + 0.3rem, 1.125rem)'
 			},
 			colors: {
+				offwhite: '#c7c7c7',
+
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
