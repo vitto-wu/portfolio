@@ -16,7 +16,7 @@ const BeforeFooter = ({ children }: { children: ReactElement }) => {
 			transformOrigin: 'top center',
 			scrollTrigger: {
 				trigger: ref.current,
-				start: 'bottom 75%',
+				start: 'bottom center',
 				end: 'bottom top',
 				scrub: true
 			},

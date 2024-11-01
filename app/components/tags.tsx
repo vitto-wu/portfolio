@@ -19,8 +19,8 @@ const TagWrapper = ({
 
 const Tag = ({ description }: { description: string }) => {
 	return (
-		<MagneticIcon className='grid h-fit'>
-			<label className="select-none rounded-sm bg-black/10 p-2 font-mono uppercase">
+		<MagneticIcon>
+			<label className="select-none rounded-sm bg-white/10 p-2 font-mono uppercase">
 				{description}
 			</label>
 		</MagneticIcon>

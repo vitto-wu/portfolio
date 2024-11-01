@@ -7,7 +7,7 @@ const Contact = () => {
 			<div className="flex flex-col items-start justify-center gap-2">
 				<h6 className="">For more informations, send me a mensage <span className='text-red-400 font-bold'>*</span></h6>
 				<Link href="mailto:victor1668wu@gmail.com">
-					<h2 className="font-mono text-h3 md:text-h2">⮡ test@mail.com</h2>
+					<h2 className="font-mono text-h3 md:text-h2">⮡ wu@mail</h2>
 				</Link>
 			</div>
 		</div>

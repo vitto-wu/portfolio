@@ -41,7 +41,7 @@ const MagneticIcon = ({
 			yTo(y)
 		}
 
-		const mouseLeave = (e: MouseEvent) => {
+		const mouseLeave = () => {
 			xTo(0)
 			yTo(0)
 		}
@@ -55,9 +55,22 @@ const MagneticIcon = ({
 		}
 	}, [])
 
-	const childElement = React.cloneElement(children, { ref: ref })
+	if (React.isValidElement(children) && typeof children.type === 'string') {
+		return React.cloneElement(children as React.ReactElement, {
+			ref: ref,
+			className: cn(
+				(children.props as any).className,
+				className
+			)
+		})
+	} else {
+	}
 
-	return <div className={cn(className, 'relative')}>{childElement}</div>
+	return (
+		<div ref={ref} className={cn(className, 'relative')}>
+			{children}
+		</div>
+	)
 }
 
 export default MagneticIcon

@@ -59,7 +59,7 @@ const FullSizeImage = forwardRef<HTMLDivElement, ImageProps>(
 					)}
 				</div>
 				{caption && (
-					<label className="absolute right-0 mt-2 block px-4 font-mono uppercase text-black/70 xl:mt-3 xl:p-0">
+					<label className="absolute right-0 lg:right-4 mt-2 block px-2 font-mono uppercase xl:mt-3 opacity-80 xl:p-0">
 						{caption}
 					</label>
 				)}

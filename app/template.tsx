@@ -1,11 +1,13 @@
 'use client'
 
 import { animatePageIn } from '@/lib/animation'
+import { useRouter } from 'next/navigation'
 import { ReactNode, useEffect, useState } from 'react'
 import Navbar from './components/navbar'
 
 const Template = ({ children }: { children: ReactNode }) => {
 	const [numOfCol, setNumOfCol] = useState(10)
+	const router = useRouter()
 
 	const getNumOfCol = () => {
 		const width = document.documentElement.clientWidth
@@ -16,6 +18,7 @@ const Template = ({ children }: { children: ReactNode }) => {
 
 	const handleResize = () => {
 		setNumOfCol(getNumOfCol())
+		router.refresh()
 	}
 
 	useEffect(() => animatePageIn(), [numOfCol])

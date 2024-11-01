@@ -7,8 +7,9 @@ import { gsap } from 'gsap'
 import { createContext, ReactNode, useContext, useRef, useState } from 'react'
 
 interface TooltipContextProps {
-	showTooltip: (content: string, delay?:number) => void
+	showTooltip: (content: string, delay?: number) => void
 	hideTooltip: () => void
+	changeContent: (content: string) => void
 }
 
 const TooltipContext = createContext<TooltipContextProps | undefined>(undefined)
@@ -17,17 +18,63 @@ export const TooltipProvider = ({ children }: { children: ReactNode }) => {
 	const ref = useRef<HTMLDivElement>(null)
 	const refs = useRef<HTMLSpanElement>(null)
 	const [content, setContent] = useState<string>('')
+	const [show, setShow] = useState<boolean>(false)
 
 	const showTooltip = (content: string, delay = 0) => {
 		setContent(content)
 		if (!ref.current || !refs.current) return
-		gsap.to(ref.current, { opacity: 1, duration: 0.3, scale: 1, ease: 'power1.out', delay: delay })
-		gsap.to(refs.current, { color: '#FFFFFF', duration: 0.3, scale: 1, ease: 'power1.out', delay: delay })
+		gsap.to(ref.current, {
+			opacity: 1,
+			duration: 0.3,
+			scale: 1,
+			ease: 'power1.out',
+			delay: delay
+		})
+		gsap.to(refs.current, {
+			duration: 0.3,
+			scale: 1,
+			ease: 'power1.out',
+			delay: delay
+		})
+
+		setShow(true)
 	}
 
 	const hideTooltip = () => {
-		gsap.to(ref.current, { opacity: 0, duration: 0.3, scale: 0, ease: 'power1.out', transformOrigin: 'center' })
-		gsap.to(refs.current, { color: 'transparent', duration: 0.3, scale: 0, ease: 'power1.out', transformOrigin: 'center' })
+		gsap.to(ref.current, {
+			opacity: 0,
+			duration: 0.3,
+			scale: 0,
+			ease: 'power1.out',
+			transformOrigin: 'center'
+		})
+		gsap.to(refs.current, {
+			duration: 0.3,
+			scale: 0,
+			ease: 'power1.out',
+			transformOrigin: 'center'
+		})
+
+		setShow(false)
+	}
+
+	const changeContent = (content: string) => {
+		setContent(content)
+		show &&
+			gsap.fromTo(
+				refs.current,
+				{
+					duration: 0.4,
+					scale: 0,
+					ease: 'power2.out',
+					transformOrigin: 'center'
+				},
+				{
+					duration: 0.4,
+					scale: 1,
+					ease: 'power2.out'
+				}
+			)
 	}
 
 	useGSAP(() => {
@@ -51,11 +98,11 @@ export const TooltipProvider = ({ children }: { children: ReactNode }) => {
 		})
 
 		const mouseMove = (e: MouseEvent) => {
-			// +25 to delocate of the center
-			xTo(e.clientX + 25)
-			yTo(e.clientY + 25)
-			xTos(e.clientX + 25)
-			yTos(e.clientY + 25)
+			// +20 shift the center - 200px of origin
+			xTo(e.clientX + 220)
+			yTo(e.clientY + 220)
+			xTos(e.clientX + 220)
+			yTos(e.clientY + 220)
 		}
 
 		document.addEventListener('mousemove', mouseMove)
@@ -66,16 +113,14 @@ export const TooltipProvider = ({ children }: { children: ReactNode }) => {
 	}, [])
 
 	return (
-		<TooltipContext.Provider value={{ showTooltip, hideTooltip }}>
+		<TooltipContext.Provider
+			value={{ showTooltip, hideTooltip, changeContent }}
+		>
 			{children}
-			<div
-				className={cn(
-					'TOOLTIP hidden md:block'
-				)}
-			>
+			<div className={cn('TOOLTIP hidden md:block')}>
 				<div
 					ref={ref}
-					className="fixed left-0 top-0 z-[40] inline h-[40px] rounded-md bg-black/20 backdrop-blur-sm scale-0"
+					className="fixed -left-[200px] -top-[200px] z-[40] inline h-[40px] scale-0 rounded-md bg-black/20 backdrop-blur-sm"
 				>
 					<span className="pointer-events-none relative select-none items-center justify-center whitespace-pre px-8 text-center text-label font-medium text-transparent opacity-0">
 						{content}
@@ -83,7 +128,7 @@ export const TooltipProvider = ({ children }: { children: ReactNode }) => {
 				</div>
 				<span
 					ref={refs}
-					className="pointer-events-none fixed left-0 top-0 z-[40] flex h-[40px] select-none items-center justify-center px-8 text-center text-label font-medium text-white scale-0"
+					className="text-offwhite pointer-events-none fixed -left-[200px] -top-[200px] z-[40] flex h-[40px] scale-0 select-none items-center justify-center px-8 text-center text-label font-medium"
 				>
 					<span className="whitespace-pre">{content}</span>
 				</span>

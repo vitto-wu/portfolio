@@ -37,13 +37,13 @@ const AboutMe = () => {
 
 	// TODO change color
 	return (
-		<div id='ABOUT' className="grid grid-cols-1 gap-2 pt-20 pb-32 lg:mt-0 -mt-2 lg:py-64 lg:grid-cols-9 lg:gap-0 relative bg-[#f2f2f2]">
+		<div id='ABOUT' className="grid grid-cols-1 gap-2 pt-0 md:pt-20 pb-32 lg:mt-0 -mt-2 lg:py-64 lg:grid-cols-9 lg:gap-0 relative text-offwhite">
 			<div
 				ref={aboutRef}
 				className="mt-12 flex flex-col gap-12 lg:col-span-4 lg:col-start-2 lg:-translate-y-[100px] lg:items-start"
 			>
 				<h1 className='text-center lg:text-start'>About Me</h1>
-				<p className="px-4 lg:p-0 lg:w-3/4 text-justify font-mono font-medium">
+				<p className="px-4 lg:p-0 lg:w-3/4 text-justify font-mono font-medium md:px-32">
 					Hello, I&apos;m Victor Wu, a fullstack developer and web
 					designer graduate in Computer Science from UNICAMP
 					(Universidade Estadual de Campinas). Passionated about
@@ -56,27 +56,27 @@ const AboutMe = () => {
 				ref={experencieRef}
 				className="mt-24 flex flex-col gap-12 lg:col-span-4 lg:col-start-6 lg:translate-y-[100px]"
 			>
-				<h1 className='text-center lg:text-start'>Exprencies</h1>
+				<h1 className='text-center lg:text-start'>Experencies</h1>
 				<div className="px-4 lg:p-0 text-center lg:text-start flex flex-col font-mono">
 					<p className="mb-1">
 						<span className="text-yellow-500">01-</span> IC/Unicamp -
 						Lead Media & Brand Designer
 					</p>
-					<p className="mb-4 font-normal text-gray-400">
+					<p className="mb-4 font-normal opacity-50">
 						07/2023 – 08/2023 – Campinas/SP (Remote)
 					</p>
 					<p className="mb-1">
 						<span className="text-yellow-500">02-</span> Funcamp -
 						Logo Designer
 					</p>
-					<p className="mb-4 font-normal text-gray-400">
+					<p className="mb-4 font-normal opacity-50">
 						08/2023 – 10/2023 – Campinas/SP (Remote)
 					</p>
 					<p className="mb-1">
 						<span className="text-yellow-500">03-</span> Academic
 						Project - Front-End Developer
 					</p>
-					<p className="mb-4 font-normal text-gray-400">
+					<p className="mb-4 font-normal opacity-50">
 						04/2024 – 06/2024 - Campinas/SP (Remote)
 					</p>
 				</div>

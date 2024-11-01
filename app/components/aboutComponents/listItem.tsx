@@ -32,12 +32,12 @@ const ListItem = ({
 	return (
 		<div
 			ref={ref}
-			className="group grid w-full translate-y-24 grid-cols-2 gap-4 md:grid-cols-4 items-center justify-end md:py-12 font-mono opacity-0 mb-8"
+			className="group grid w-full translate-y-24 grid-cols-2 gap-4 xl:grid-cols-4 items-center justify-end xl:py-12 font-mono opacity-0 mb-8"
 		>
 			<h6 className="whitespace-nowrap">
 				<span className="text-black/20">[0{index}]</span> {title}
 			</h6>
-			<p className="col-span-2 md:col-start-3 text-justify">{desc}</p>
+			<p className="col-span-2 xl:col-start-3 text-justify">{desc}</p>
 			<div className="border-text-black/20 absolute bottom-0 left-0 w-0 border-b-2 transition-all duration-500 ease-in-out group-hover:w-full"></div>
 		</div>
 	)

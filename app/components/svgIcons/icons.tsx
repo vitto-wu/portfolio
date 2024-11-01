@@ -1,3 +1,66 @@
+const Logo = () => {
+	return (
+	  <svg
+		width={1000}
+		height={1000}
+		viewBox="0 0 1000 1000"
+	  >
+		<defs>
+		  <linearGradient
+			id="a"
+			x1={346}
+			y1={555.426}
+			x2={410}
+			y2={444.574}
+			gradientUnits="userSpaceOnUse"
+		  >
+			<stop offset={0} stopColor="#fff" />
+			<stop offset={1} stopColor="#c7c7c7" />
+		  </linearGradient>
+		  <linearGradient
+			id="b"
+			x1={360.024}
+			y1={640.406}
+			x2={522.476}
+			y2={359.031}
+			xlinkHref="#a"
+		  />
+		  <linearGradient
+			id="c"
+			x1={481.024}
+			y1={640.406}
+			x2={643.476}
+			y2={359.031}
+			xlinkHref="#a"
+		  />
+		</defs>
+		<circle data-name="Elipse 1" cx={481} cy={493} r={267} />
+		<rect
+		  data-name="Ret\xE2ngulo 1"
+		  x={346}
+		  y={359}
+		  width={64}
+		  height={282}
+		  rx={32}
+		  ry={32}
+		  fill="url(#a)"
+		/>
+		<path
+		  data-name="Ret\xE2ngulo 1"
+		  d="M362.5 636.11a32 32 0 01-11.713-43.71l125.5-217.373a32 32 0 0155.426 32L406.213 624.4a32 32 0 01-43.713 11.71z"
+		  fill="url(#b)"
+		  fillRule="evenodd"
+		/>
+		<path
+		  data-name="Ret\xE2ngulo 1"
+		  d="M483.5 636.11a32 32 0 01-11.713-43.71l125.5-217.373a32 32 0 0155.426 32L527.213 624.4a32 32 0 01-43.713 11.71z"
+		  fill="url(#c)"
+		  fillRule="evenodd"
+		/>
+	  </svg>
+	)
+  }
+
 const nextJS = () => {
 	return (
 		<svg
@@ -6,7 +69,7 @@ const nextJS = () => {
 			viewBox="0 0 256 256"
 			xmlns="http://www.w3.org/2000/svg"
 			preserveAspectRatio="xMidYMid"
-			className="fill-gray-400 hover:fill-[#000000] transition-colors ease-out duration-200 size-[32px] md:size-[48px] lg:size-[64px]"
+			className="fill-white/40 hover:fill-[#ffffff] transition-colors ease-out duration-200 size-[32px] md:size-[48px] lg:size-[64px]"
 		>
 			<path d="M119.617.069c-.55.05-2.302.225-3.879.35-36.36 3.278-70.419 22.894-91.99 53.044-12.012 16.764-19.694 35.78-22.597 55.922C.125 116.415 0 118.492 0 128.025c0 9.533.125 11.61 1.151 18.64 6.957 48.065 41.165 88.449 87.56 103.411 8.309 2.678 17.067 4.504 27.027 5.605 3.879.425 20.645.425 24.524 0 17.192-1.902 31.756-6.155 46.12-13.486 2.202-1.126 2.628-1.426 2.327-1.677-.2-.15-9.584-12.735-20.845-27.948l-20.47-27.648-25.65-37.956c-14.114-20.868-25.725-37.932-25.825-37.932-.1-.025-.2 16.84-.25 37.431-.076 36.055-.1 37.506-.551 38.357-.65 1.226-1.151 1.727-2.202 2.277-.801.4-1.502.475-5.28.475h-4.33l-1.15-.725a4.679 4.679 0 01-1.677-1.827l-.526-1.126.05-50.166.075-50.192.776-.976c.4-.525 1.251-1.2 1.852-1.526 1.026-.5 1.426-.55 5.755-.55 5.105 0 5.956.2 7.282 1.651.376.4 14.264 21.318 30.88 46.514 16.617 25.195 39.34 59.599 50.5 76.488l20.27 30.7 1.026-.675c9.084-5.905 18.693-14.312 26.3-23.07 16.191-18.59 26.626-41.258 30.13-65.428 1.026-7.031 1.151-9.108 1.151-18.64 0-9.534-.125-11.61-1.151-18.641-6.957-48.065-41.165-88.449-87.56-103.411-8.184-2.652-16.892-4.479-26.652-5.58-2.402-.25-18.943-.525-21.02-.325zm52.401 77.414c1.201.6 2.177 1.752 2.527 2.953.2.65.25 14.562.2 45.913l-.074 44.987-7.933-12.16-7.958-12.16v-32.702c0-21.143.1-33.028.25-33.603.4-1.401 1.277-2.502 2.478-3.153 1.026-.525 1.401-.575 5.33-.575 3.704 0 4.354.05 5.18.5z"/>
 		</svg>
@@ -23,8 +86,8 @@ const css = () => {
 			xmlns="http://www.w3.org/2000/svg"
 			className="group size-[32px] md:size-[48px] lg:size-[64px]"
 		>
-			<path d="M6 28L4 3h24l-2 25-10 3-10-3z" className="group-hover:fill-[#1172B8] fill-gray-400 transition-colors ease-out duration-200" />
-			<path d="M26 5H16v24.5l8-2.5 2-22z" className="group-hover:fill-[#3AD] fill-gray-400 transition-colors ease-out duration-200" />
+			<path d="M6 28L4 3h24l-2 25-10 3-10-3z" className="group-hover:fill-[#1172B8] fill-white/40 transition-colors ease-out duration-200" />
+			<path d="M26 5H16v24.5l8-2.5 2-22z" className="group-hover:fill-[#3AD] fill-white/40 transition-colors ease-out duration-200" />
 			<path
 				d="M19.5 17.5h-10L9 14l8-2.5H9l-.5-3H24l-.5 3.5-6.5 2.5h6L22 24l-6 2-6-2-.5-5h3l.5 2.5 3 1 3-1 .5-4z"
 				fill="#fff"
@@ -43,7 +106,7 @@ const js = () => {
 			xmlns="http://www.w3.org/2000/svg"
 			className="group size-[32px] md:size-[48px] lg:size-[64px]"
 		>
-			<path className="group-hover:fill-[#FFCA28] fill-gray-400 transition-colors ease-out duration-200" d="M2 2H30V30H2z" />
+			<path className="group-hover:fill-[#FFCA28] fill-white/40 transition-colors ease-out duration-200" d="M2 2H30V30H2z" />
 			<path
 				d="M19 25.288l2.061-1.364c.162.507 1.185 1.713 2.477 1.713 1.293 0 1.893-.706 1.893-1.174 0-1.275-1.32-1.725-1.954-1.94a3.689 3.689 0 01-.246-.09 3.68 3.68 0 00-.133-.053c-.705-.269-3.306-1.262-3.306-4.143 0-3.172 3.062-3.537 3.754-3.537.453 0 2.63.056 3.716 2.094l-2 1.396c-.439-.889-1.167-1.182-1.616-1.182-1.108 0-1.338.812-1.338 1.182 0 1.037 1.203 1.502 2.22 1.894.265.103.518.2.734.303 1.107.523 2.738 1.38 2.738 4.076C28 25.813 26.867 28 24.015 28c-3.83 0-4.846-2.3-5.015-2.712zM9 25.559l2.149-1.364c.168.508.822 1.443 1.772 1.443.949 0 1.435-.975 1.435-1.443V15h2.642v9.195c.043 1.269-.66 3.805-3.765 3.805C10.38 28 9.193 26.304 9 25.56z"
 				className="group-hover:fill-[#3E3E3E] fill-white"
@@ -76,7 +139,7 @@ const tailwindCSS = () => {
 			</defs>
 			<path
 				d="M128 0C93.867 0 72.533 17.067 64 51.2 76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0zM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2 9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8z"
-				className="group-hover:fill-[url(#a)] fill-gray-400 transition-colors ease-out duration-200"
+				className="group-hover:fill-[url(#a)] fill-white/40 transition-colors ease-out duration-200"
 			/>
 		</svg>
 	)
@@ -90,7 +153,7 @@ const react = () => {
 			viewBox="0 0 32 32"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			className="fill-gray-400 transition-colors ease-out duration-200 hover:fill-[#53C1DE] size-[32px] md:size-[48px] lg:size-[64px]"
+			className="fill-white/40 transition-colors ease-out duration-200 hover:fill-[#53C1DE] size-[32px] md:size-[48px] lg:size-[64px]"
 		>
 			<path
 				d="M18.679 15.976c0-1.435-1.2-2.598-2.679-2.598-1.48 0-2.679 1.163-2.679 2.598 0 1.434 1.2 2.597 2.679 2.597 1.48 0 2.679-1.163 2.679-2.597z"
@@ -118,13 +181,13 @@ const python = () => {
 				fillRule="evenodd"
 				clipRule="evenodd"
 				d="M13.016 2C10.82 2 9.038 3.725 9.038 5.852v2.667h6.886v.74H5.978C3.781 9.26 2 10.984 2 13.111v5.778c0 2.127 1.781 3.852 3.978 3.852h2.295v-3.26c0-2.127 1.781-3.851 3.978-3.851h7.345c1.859 0 3.366-1.46 3.366-3.26V5.852C22.962 3.725 21.18 2 18.984 2h-5.968zm-.918 4.74c.76 0 1.377-.596 1.377-1.333 0-.736-.616-1.333-1.377-1.333-.76 0-1.377.597-1.377 1.333 0 .737.617 1.334 1.377 1.334z"
-				className="group-hover:fill-[url(#paint0_linear_87_8204)] fill-gray-400 transition-colors ease-out duration-200"
+				className="group-hover:fill-[url(#paint0_linear_87_8204)] fill-white/40 transition-colors ease-out duration-200"
 			/>
 			<path
 				fillRule="evenodd"
 				clipRule="evenodd"
 				d="M18.983 30c2.197 0 3.979-1.724 3.979-3.852v-2.666h-6.886v-.741h9.946c2.197 0 3.978-1.725 3.978-3.852V13.11c0-2.127-1.781-3.852-3.978-3.852h-2.295v3.26c0 2.127-1.782 3.851-3.979 3.851h-7.344c-1.859 0-3.366 1.46-3.366 3.26v6.518c0 2.128 1.781 3.852 3.978 3.852h5.967zm.918-4.74c-.76 0-1.377.596-1.377 1.333 0 .736.617 1.333 1.377 1.333.761 0 1.378-.597 1.378-1.333 0-.737-.617-1.334-1.378-1.334z"
-				className="group-hover:fill-[url(#paint1_linear_87_8204)] fill-gray-400 transition-colors ease-out duration-200"
+				className="group-hover:fill-[url(#paint1_linear_87_8204)] fill-white/40 transition-colors ease-out duration-200"
 			/>
 			<defs>
 				<linearGradient
@@ -162,7 +225,7 @@ const gsap = () => {
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
 			viewBox="0 0 82 30"
-			className="fill-gray-400 transition-colors ease-out duration-200 hover:fill-[#01df57] size-[32px] md:size-[48px] lg:size-[64px]"
+			className="fill-white/40 transition-colors ease-out duration-200 hover:fill-[#01df57] size-[32px] md:size-[48px] lg:size-[64px]"
 		>
 			<path
 				d="M23.81 14.012v.013l-1.075 4.666c-.058.264-.322.457-.626.457H20.81a.218.218 0 0 0-.208.156c-1.198 4.064-2.82 6.857-4.962 8.534-1.822 1.428-4.068 2.094-7.069 2.094-2.696 0-4.514-.867-6.056-2.579-2.038-2.262-2.88-5.966-2.37-10.428C1.065 8.548 5.41.095 13.776.095c2.545-.022 4.543.763 5.933 2.33 1.47 1.658 2.216 4.154 2.22 7.422a.55.55 0 0 1-.549.536h-6.13a.42.42 0 0 1-.407-.41c-.05-2.26-.72-3.36-2.052-3.36-2.35 0-3.736 3.19-4.471 4.958-1.027 2.47-1.55 5.153-1.447 7.825.049 1.244.249 2.993 1.43 3.718 1.047.642 2.541.216 3.446-.495.904-.712 1.632-1.943 1.938-3.066.043-.156.046-.277.005-.331-.043-.056-.162-.069-.253-.069h-1.574a.572.572 0 0 1-.438-.202.42.42 0 0 1-.087-.362l1.076-4.674c.053-.239.27-.42.537-.452v-.012h10.33c.024 0 .049 0 .072.005.268.035.457.284.452.556h.002Z"
@@ -192,7 +255,7 @@ const git = () => {
 		>
 			<path
 				d="M2.585 17.413a1.999 1.999 0 010-2.826L14.587 2.585c.78-.78 2.046-.78 2.826 0l12.002 12.002c.78.78.78 2.046 0 2.826L17.413 29.415c-.78.78-2.046.78-2.826 0L2.585 17.413z"
-				className="fill-gray-400 transition-colors ease-out duration-200 group-hover:fill-[#EE513B]"
+				className="fill-white/40 transition-colors ease-out duration-200 group-hover:fill-[#EE513B]"
 			/>
 			<path
 				d="M12.149 5.062l-1.215 1.215 3.139 3.139A2.126 2.126 0 0015.25 12.3v7.679a2.126 2.126 0 101.718.097v-7.765l3 3a2.125 2.125 0 101.283-1.147l-3.221-3.223a2.125 2.125 0 00-2.66-2.66l-3.221-3.22z"

@@ -15,7 +15,7 @@ const Hero = () => {
 	const componentRef = useRef<HTMLDivElement>(null)
 	const imgRef = useRef<HTMLDivElement>(null)
 
-	const { showTooltip, hideTooltip } = useTooltip()
+	const { showTooltip, hideTooltip, changeContent } = useTooltip()
 
 	useGSAP(() => {
 		ScrollTrigger.create({
@@ -40,11 +40,16 @@ const Hero = () => {
 		})
 
 		ScrollTrigger.create({
-            start: '10 top',
-			onUpdate: ({ progress }) => {!progress ?  showTooltip(`SCROLL DOWN ${' '.repeat(2)} ↓`) :hideTooltip()},
-        });
+			start: '10 top',
+			onUpdate: ({ progress }) => {
+				!progress
+					? showTooltip(`SCROLL DOWN ${' '.repeat(2)} ↓`)
+					: hideTooltip()
+			}
+		})
 
-		if (window.scrollY <= 2) showTooltip(`SCROLL DOWN ${' '.repeat(2)} ↓`, 1.5)
+		if (window.scrollY <= 2)
+			showTooltip(`SCROLL DOWN ${' '.repeat(2)} ↓`, 1.5)
 	}, [])
 
 	return (
@@ -60,18 +65,27 @@ const Hero = () => {
 				fill={true}
 				className="HERO_IMAGE"
 			/>
-			<div className="flex flex-col items-center justify-center gap-4">
+			<div
+				className="flex flex-col items-center justify-center gap-4"
+				onMouseLeave={() =>
+					changeContent(`SCROLL DOWN ${' '.repeat(2)} ↓`)
+				}
+			>
 				<h1
 					ref={nameRef}
 					className="select-none font-mono uppercase opacity-0"
 				>
 					Victor.Wu
 				</h1>
-				<div
-					className="flex flex-row justify-between gap-4 uppercase text-white md:justify-end"
-				>
+				<div className="text-offwhite flex flex-row justify-between gap-4 uppercase">
 					<TextReveal parentRef={componentRef}>
-						<Link href="/cv.pdf" target="_blank">
+						<Link
+							href="/cv.pdf"
+							target="_blank"
+							onMouseEnter={() =>
+								changeContent(`LINK TO ${' '.repeat(2)} ↗`)
+							}
+						>
 							<p>read.cv</p>
 						</Link>
 					</TextReveal>
@@ -83,6 +97,9 @@ const Hero = () => {
 						<Link
 							href="https://github.com/vitto-wu"
 							target="_blank"
+							onMouseEnter={() =>
+								changeContent(`LINK TO ${' '.repeat(2)} ↗`)
+							}
 						>
 							<p>github</p>
 						</Link>
@@ -95,6 +112,9 @@ const Hero = () => {
 						<Link
 							href="https://linkedin.com/in/vitto-wu"
 							target="_blank"
+							onMouseEnter={() =>
+								changeContent(`LINK TO ${' '.repeat(2)} ↗`)
+							}
 						>
 							<p>linkedin</p>
 						</Link>

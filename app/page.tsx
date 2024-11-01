@@ -17,26 +17,36 @@ export default function Home() {
 	const router = useRouter()
 
 	return (
-		<main className="w-full">
+		<main className="w-screen overflow-x-hidden">
 			<CustomScrollBar />
 			<Hero />
-			<section className="LAST_PROJECT relative flex h-screen w-full flex-col gap-2 bg-[#f2f2f2] py-10 md:py-32">
-				<h1 className="HEDEAR absolute flex w-full select-none flex-row justify-center px-8 font-black uppercase tracking-wider text-gray-200 md:-mt-8 md:justify-between md:px-40 md:text-9xl">
+			<section className="LAST_PROJECT text-offwhite relative flex w-full flex-col gap-2 bg-black py-24 md:py-52">
+				<h1 className="HEDEAR absolute top-0 mt-20 flex w-full select-none flex-wrap justify-center px-8 font-black uppercase tracking-wider opacity-15 sm:text-9xl md:mt-40 md:px-40">
 					<span>latest</span>
-					<span className="hidden md:inline-block">Project</span>
+					<span className="ml-16">Project</span>
 				</h1>
 				<TransitionLink href="/projects">
-					<p className="z-10 select-none px-4 text-end font-semibold uppercase md:px-16">
-						see all projects +{' '}
+					<p className="group z-10 inline-block select-none self-end px-4 font-semibold uppercase md:px-16">
+						see all projects{' '}
+						<span className="inline-block transform transition duration-500 group-hover:rotate-[315deg]">
+							+
+						</span>
 					</p>
 				</TransitionLink>
 				<div
-					className="relative z-10 m-8 mx-0 flex-grow cursor-pointer bg-cover bg-center font-mono md:mx-24"
+					className="relative z-10 mx-0 flex flex-grow cursor-pointer flex-col items-center bg-cover bg-center pb-28 font-mono lg:mx-24"
 					onClick={() => {
 						animatePageOut(`projects/o2t`, router)
 					}}
 				>
-					<div className="absolute z-20 flex w-full flex-col justify-between gap-4 p-8 text-white md:flex-row md:items-center">
+					<FullSizeImage
+						src="/images/test2.jpg"
+						alt="test"
+						className="BACKGROUND"
+						overlayOpacity={0.3}
+						fill={true}
+					/>
+					<div className="text-offwhite relative z-20 flex w-full flex-col gap-4 p-8 md:flex-row md:items-center md:justify-between">
 						<div className="flex flex-col gap-2">
 							<h5 className="whitespace-nowrap">
 								Olympic Training Tracker
@@ -46,29 +56,25 @@ export default function Home() {
 							</p>
 						</div>
 						<Tags.Root className="md:justify-end">
-							<Tags.Tag description="description" />
-							<Tags.Tag description="description" />
-							<Tags.Tag description="description" />
+							<Tags.Tag description="design" />
+							<Tags.Tag description="development" />
+							<Tags.Tag description="2024" />
 						</Tags.Root>
 					</div>
-
-					<FullSizeImage
-						src="/images/O2T_HOME.png"
-						alt="test"
-						className=""
-					/>
-					<div
-						className="OVERLAY absolute inset-0 z-10 bg-black/30"
-					></div>
+					<div className="relative z-20 w-full md:w-[80%]">
+						<FullSizeImage src="/images/O2T_HOME.png" alt="test" />
+					</div>
 				</div>
 			</section>
-			<AboutMe />
-			<Stack />
+			<div className="bg-black z-10 relative">
+				<AboutMe />
+				<Stack />
+			</div>
 			<BeforeFooter>
-				<div className="relative flex flex-col gap-8 bg-[#f2f2f2] px-4 py-24 md:flex-row md:gap-24 md:px-24">
-					<h1 className="top-24 my-12 h-fit w-fit whitespace-nowrap md:sticky">
+				<div className="text-offwhite relative flex flex-col gap-8 bg-black px-4 py-24 md:px-8 lg:flex-row lg:gap-24 lg:px-24">
+					<h1 className="top-24 my-12 h-fit w-fit whitespace-nowrap">
 						How I can
-						<span className="block text-black/20">help you</span>
+						<span className="block opacity-40">help you</span>
 					</h1>
 					<div className="w-full">
 						<ListItem

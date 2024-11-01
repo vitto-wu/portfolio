@@ -21,11 +21,10 @@ const Navbar = () => {
 
 	const componentRef = useRef<HTMLDivElement>(null)
 	const nameRef = useRef<CustomDivElement>(null)
-	const [windowWidth, setWindowWidth] = useState(0)
 	const [showNavbar, setShowNavbar] = useState(true)
 	const [desableHomeLink, setDesableHomeLink] = useState(pathname === '/')
 	const [clock, setTime] = useState<string>('')
-	let lastTime = 0
+	const lastProgress = useRef(0)
 
 	const scrollToSection = (sectionId: string, delay: number = 1000) => {
 		setTimeout(() => {
@@ -34,26 +33,6 @@ const Navbar = () => {
 				?.scrollIntoView({ behavior: 'smooth' })
 		}, delay)
 	}
-
-	const eventDelay = () => {
-		const currentTime = new Date().getTime()
-		if (currentTime - lastTime > 1000) {
-			lastTime = currentTime
-			return true
-		}
-		return false
-	}
-
-	useEffect(() => {
-		const { clientWidth } = document.documentElement
-		setWindowWidth(clientWidth)
-
-		const handleResize = () =>
-			setWindowWidth(document.documentElement.clientWidth)
-		window.addEventListener('resize', handleResize)
-
-		return () => window.removeEventListener('resize', handleResize)
-	}, [])
 
 	useGSAP(() => {
 		// Navbar hide on scroll down animation
@@ -82,47 +61,53 @@ const Navbar = () => {
 				lineHeight: isForward ? lineHeight['h1'] : lineHeight['p'],
 				fontWeight: isForward ? 700 : 500,
 				duration: 1,
-				ease: 'power1.out',
-				stagger: {
-				  each: 0.03
-				}
-			  });
+				ease: 'power3.out',
+				stagger: 0.03
+			})
 		}
 
 		// left : -4rem -> navbar x-padding
 		// top : -2rem -> navbar y-padding, -1.1rem -> gap-4 em /home/hero
 		gsap.to(nameRef.current, {
 			delay: isForward ? 0.1 : 0,
-			left: isForward
-				? `calc(50vw - ${windowWidth < 768 ? '2rem' : '4rem'})`
-				: 0,
+			left: isForward ? `calc(50vw - 2rem)` : 0,
 			top: isForward ? `calc(50vh - 2rem - 1.1rem)` : 0,
 			x: isForward ? '-50%' : 0,
 			y: isForward ? '-50%' : 0,
-			duration: 1,
-			ease: isForward ? 'power2.out' : 'power2.out'
+			duration: 0.8,
+			ease: isForward ? 'power2.out' : 'power3.out'
 		})
 	}
 
 	useEffect(() => {
-		if (pathname != '/') return
+		if (pathname == '/') {
+			setTimeout(() => {
+				window.scrollTo(0, 0)
+				applyNameAnimations(true)
+				setDesableHomeLink(true)
+				console.log('home')
+			}, 30)
+		} else {
+			applyNameAnimations(false)
+			setDesableHomeLink(false)
+			return
+		}
 
 		// animation trigger for name
 		const trigger = ScrollTrigger.create({
 			start: '10 top',
 			onUpdate: ({ progress }) => {
-				if (progress > 0) {
+				if (progress > 0 && !lastProgress.current) {
 					applyNameAnimations(false)
 					setDesableHomeLink(false)
-				} else {
-					if (!eventDelay()) return
+				} else if (progress == 0 && lastProgress.current) {
 					applyNameAnimations(true)
 					setDesableHomeLink(true)
 				}
+
+				lastProgress.current = progress
 			}
 		})
-
-		if (window.scrollY <= 2) applyNameAnimations(true)
 
 		return () => {
 			applyNameAnimations(false)
@@ -161,7 +146,7 @@ const Navbar = () => {
 		<div
 			ref={componentRef}
 			className={cn(
-				'fixed top-0 z-50 grid w-screen select-none grid-cols-2 px-8 py-8 font-mono font-bold text-white transition duration-500 md:grid-cols-3 md:px-16',
+				'text-offwhite fixed top-0 z-50 grid w-screen select-none grid-cols-2 px-8 py-8 font-mono font-bold transition duration-500 md:grid-cols-3',
 				showNavbar
 					? 'opacity-100'
 					: 'pointer-events-none -translate-y-6 opacity-0'
@@ -175,7 +160,7 @@ const Navbar = () => {
 						desableHomeLink ? 'pointer-events-none' : ''
 					)}
 				>
-					VICTOR . WU
+					VICTOR.WU
 				</p>
 			</TransitionLink>
 			<p className="hidden select-none text-center md:block">{clock}</p>

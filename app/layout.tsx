@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import { JetBrains_Mono, Schibsted_Grotesk } from 'next/font/google'
 import SmoothScroll from './components/animationUtils/smoothScroll'
 
-import './globals.css'
 import { TooltipProvider } from './components/animationsUI/tooltip'
+import './globals.css'
 
 const schibstedGrotesk = Schibsted_Grotesk({
 	subsets: ['latin'],
@@ -31,15 +31,13 @@ export default function RootLayout({
 		<html lang="en">
 			<body
 				className={cn(
-					'font-sans selection:bg-gray-800 selection:text-white relative',
+					'selection:text-offwhite relative bg-[#c9c9be] font-sans selection:bg-gray-800',
 					schibstedGrotesk.variable,
 					jetBrainsMono.variable
 				)}
 			>
 				<SmoothScroll />
-				<TooltipProvider>
-					{children}
-				</TooltipProvider>
+				<TooltipProvider>{children}</TooltipProvider>
 			</body>
 		</html>
 	)
