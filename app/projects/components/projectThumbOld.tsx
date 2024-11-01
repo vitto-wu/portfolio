@@ -42,7 +42,7 @@ const ProjectThumbOld = () => {
 						className="" //[ ] grayscale filter transition duration-500 group-hover:grayscale-0
 					/>
 				</div>
-				<div className="text_card absolute flex h-full w-full flex-col justify-between p-8 font-mono font-bold text-white">
+				<div className="text_card text-offwhite absolute flex h-full w-full flex-col justify-between p-8 font-mono font-bold">
 					<div className="card_top">
 						<p>EXP 001</p>
 						<p>2024</p>
@@ -52,7 +52,13 @@ const ProjectThumbOld = () => {
 						<p>FRONT-END • DESIGN</p>
 					</div>
 				</div>
-				<video className="h-[70%] rounded-md" loop muted playsInline autoPlay>
+				<video
+					className="h-[70%] rounded-md"
+					loop
+					muted
+					playsInline
+					autoPlay
+				>
 					<source src="/videos/test.mp4" type="video/mp4" />
 					Seu navegador não suporta o elemento de vídeo.
 				</video>

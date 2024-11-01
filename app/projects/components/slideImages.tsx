@@ -103,7 +103,7 @@ const SlideImages = ({ currentProject = 0 }: { currentProject: number }) => {
 			<FullSizeImage
 				src="/images/testImage.jpg"
 				alt="user flow"
-				overlayOpacity={0.2}
+				overlayOpacity={0.25}
 				fill={true}
 				className=""
 			/>

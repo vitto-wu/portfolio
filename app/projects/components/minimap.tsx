@@ -16,7 +16,6 @@ const Minimap = ({
 	currentProject: number
 	changeProject: (newProject: number) => void
 }) => {
-
 	gsap.registerPlugin(ScrollTrigger)
 
 	const { hideTooltip } = useTooltip()
@@ -51,7 +50,7 @@ const Minimap = ({
 				/>
 			</div>
 			<div
-				className="grid aspect-[16/9] w-24 select-none place-content-center bg-black font-mono text-white"
+				className="text-offwhite grid aspect-[16/9] w-24 select-none place-content-center bg-black font-mono"
 				onClick={() => changeProject(1)}
 			>
 				<label className="cursor-pointer">End...</label>

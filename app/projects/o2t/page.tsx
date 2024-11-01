@@ -1,17 +1,20 @@
 import FullSizeImage from '@/app/components/fullSizeImage'
+import ShowCaseImage from '@/app/components/showCaseImage'
 import { Project } from '../components/ProjectComposition/Index'
 
 const O2T = () => {
+	const bgSrc = '/images/testImage.jpg'
+
 	return (
-		<Project.Root>
+		<Project.Root className=''>
 			<Project.Hero
 				role={['frontend']}
-				tools={['figma', 'next.js', 'tailwindcss']}
+				tools={['figma', 'next.js']}
 				duration="apr 2024 - jun 2024"
 			/>
-			<Project.Content.Wrap>
+			<Project.Content.Wrap className="bg-black text-offwhite">
 				<Project.Content.Header
-					tags={['react', 'typescript', 'tailwindcss']}
+					tags={['design', 'development', '2024']}
 					projectName="olympics training tracker"
 				>
 					O2T is a web application designed for{' '}
@@ -30,7 +33,7 @@ const O2T = () => {
 						alt="test"
 						className="rounded-sm"
 					/>
-					<section className="grid grid-cols-1 gap-4 px-4 xl:grid-cols-5 xl:px-8">
+					<section className="grid grid-cols-1 gap-4 px-4 xl:grid-cols-5 lg:px-8">
 						<h4 className="mb-4 xl:col-span-2">The Problem</h4>
 						<div className="text-justify xl:col-span-3">
 							<p className="">
@@ -51,8 +54,8 @@ const O2T = () => {
 							</p>
 						</div>
 					</section>
-					<section className="flex flex-col gap-4">
-						<div className="mb-8 grid grid-cols-1 gap-4 px-4 xl:grid-cols-5 xl:px-8">
+					<section className="flex flex-col gap-8">
+						<div className="mb-8 grid grid-cols-1 gap-4 px-4 xl:grid-cols-5 lg:px-8">
 							<h4 className="mb-4 xl:col-span-2">Conception</h4>
 							<p className="text-justify xl:col-span-3">
 								Shown in the figure below, the main pain points
@@ -63,30 +66,34 @@ const O2T = () => {
 						</div>
 						<FullSizeImage
 							src="/images/o2tFlow.png"
-							className="rounded-lg border border-gray-400"
+							className="rounded-lg"
 							alt="user flow"
+							caption="Navigation Structure"
 						/>
-						<FullSizeImage
-							src="/images/O2T_DASHBOARD.png"
-							className="rounded-sm"
-							alt="test"
+						<ShowCaseImage
+							bgSrc={bgSrc}
+							imgSrc="/images/O2T_DASHBOARD.png"
+							bgAlt="test"
+							imgAlt="test"
 							caption="Dashboard Screen"
 						/>
-						<FullSizeImage
-							src="/images/O2T_Log.png"
-							className="rounded-sm"
-							alt="test"
+						<ShowCaseImage
+							bgSrc={bgSrc}
+							imgSrc="/images/O2T_Log.png"
+							bgAlt="test"
+							imgAlt="test"
 							caption="Workout Log Screen"
 						/>
-						<FullSizeImage
-							src="/images/O2T_METRICS.png"
-							className="rounded-sm"
-							alt="test"
+						<ShowCaseImage
+							bgSrc={bgSrc}
+							imgSrc="/images/O2T_METRICS.png"
+							bgAlt="test"
+							imgAlt="test"
 							caption="Health Metrics Screen"
 						/>
 					</section>
-					<section className="mb-8 grid grid-cols-1 gap-4 px-4 xl:grid-cols-5 xl:px-8">
-						<h4 className="xl:col-span-2">Improvments</h4>
+					<section className="mb-8 grid grid-cols-1 gap-4 px-4 xl:grid-cols-5 lg:px-8">
+						<h4 className="xl:col-span-2">Improvements</h4>
 						<div className="flex flex-col gap-8 xl:col-span-3">
 							<p className="text-justify">
 								For the second version of the project, the goal

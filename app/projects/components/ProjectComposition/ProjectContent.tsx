@@ -1,4 +1,5 @@
 import { Tags } from '@/app/components/tags'
+import { cn } from '@/lib/utils'
 
 type HeaderContentProps = {
 	children: React.ReactNode
@@ -26,16 +27,22 @@ const Header = ({ children, tags, projectName }: HeaderContentProps) => {
 
 const Content = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<div className="relative mt-8 xl:mt-16 flex w-full flex-col gap-16 xl:gap-24">
+		<div className="relative mt-8 flex w-full flex-col gap-16 xl:mt-16 xl:gap-24">
 			{children}
 		</div>
 	)
 }
 
 // TODO - add live site link
-const Wrap = ({ children }: { children: React.ReactNode }) => {
+const Wrap = ({
+	children,
+	className
+}: {
+	children: React.ReactNode
+	className?: string
+}) => {
 	return (
-		<div className="relative flex flex-col bg-[#f2f2f2] pb-8 font-mono xl:flex-row xl:p-8">
+		<div className={cn("relative flex flex-col bg-[#f2f2f2] pb-8 font-mono xl:flex-row xl:p-8", className)}>
 			{children}
 		</div>
 	)

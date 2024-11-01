@@ -1,11 +1,10 @@
-import FullSizeImage from '@/app/components/fullSizeImage'
 import Link from 'next/link'
 
 const ProjectThumb = () => {
 	return (
 		<Link href="/projects/o2t">
-			<div className="absolute w-full inline-flex items-center justify-center left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]">
-				<div className="text_card absolute flex h-full w-full flex-col justify-between p-8 font-mono font-bold text-white mix-blend-exclusion">
+			<div className="absolute left-[50%] top-[50%] inline-flex w-full -translate-x-[50%] -translate-y-[50%] items-center justify-center">
+				<div className="text_card text-offwhite absolute flex h-full w-full flex-col justify-between p-8 font-mono font-bold mix-blend-exclusion">
 					<div className="card_top">
 						<p>EXP 001</p>
 						<p>2024</p>

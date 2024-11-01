@@ -48,34 +48,31 @@ const ProjectHero = ({ role, duration, tools, company }: ProjectHeroProps) => {
 			ref={ref}
 			className="grid h-screen grid-rows-5 place-items-center overflow-hidden bg-black p-4 text-center"
 		>
-			<div
-				ref={imgRef}
-				className="HERO_IMAGE absolute h-full w-full"
-			>
+			<div ref={imgRef} className="HERO_IMAGE absolute h-full w-full">
 				<Image
 					src="/images/testImage.jpg"
 					alt="PorjectThumbnail"
 					layout="fill"
 					objectFit="cover"
 				/>
-				<div className="OVERLAY absolute inset-0 bg-black opacity-25"></div>
+				<div className="OVERLAY absolute inset-0 bg-black opacity-30"></div>
 			</div>
 			<div className="title z-10 row-start-3">
 				<TextReveal parentRef={ref} delay={0.05}>
-					<p className="mb-2 font-mono text-white">
+					<p className="text-offwhite mb-2 font-mono">
 						PROJECT / NO.01
 					</p>
 				</TextReveal>
 				<TextReveal parentRef={ref}>
-					<h5 className="font-bold uppercase text-white">
+					<h5 className="text-offwhite font-bold uppercase">
 						olympics training tracker
 					</h5>
 				</TextReveal>
 			</div>
-			<div className="description z-10 row-start-4 grid grid-cols-2 gap-8 uppercase text-white xl:grid-cols-4 xl:gap-16">
+			<div className="description text-offwhite z-10 row-start-4 grid grid-cols-2 gap-8 uppercase xl:grid-cols-4 xl:gap-16">
 				<TextReveal parentRef={ref} delay={0.05}>
 					<div className="flex flex-col items-start">
-						<label className="mb-2 uppercase opacity-50">
+						<label className="mb-2 uppercase opacity-60">
 							company
 						</label>
 						{company ? <p>{company}</p> : <p>*personal</p>}
@@ -83,7 +80,7 @@ const ProjectHero = ({ role, duration, tools, company }: ProjectHeroProps) => {
 				</TextReveal>
 				<TextReveal parentRef={ref} delay={0.1}>
 					<div className="flex flex-col items-start">
-						<label className="mb-2 uppercase opacity-50">
+						<label className="mb-2 uppercase opacity-60">
 							ROLE
 						</label>
 						{role.map((e, i) => {
@@ -93,7 +90,7 @@ const ProjectHero = ({ role, duration, tools, company }: ProjectHeroProps) => {
 				</TextReveal>
 				<TextReveal parentRef={ref} delay={0.15}>
 					<div className="flex flex-col items-start">
-						<label className="mb-2 uppercase opacity-50">
+						<label className="mb-2 uppercase opacity-60">
 							Duration
 						</label>
 						<p className="">{duration}</p>
@@ -101,7 +98,7 @@ const ProjectHero = ({ role, duration, tools, company }: ProjectHeroProps) => {
 				</TextReveal>
 				<TextReveal parentRef={ref} delay={0.2}>
 					<div className="flex flex-col items-start">
-						<label className="mb-2 uppercase opacity-50">
+						<label className="mb-2 uppercase opacity-60">
 							tools
 						</label>
 						{tools.map((e, i) => {

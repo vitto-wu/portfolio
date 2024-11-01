@@ -55,16 +55,20 @@ const ProjectsTiles = ({ currentProject = 0 }: { currentProject: number }) => {
 	}
 
 	// TODO verify the bug
-	const addChild = () =>{
+	const addChild = () => {
 		const newSpanTitle = document.createElement('span')
 		Object.assign(newSpanTitle.style, textStyle)
 		newSpanTitle.style.marginTop = '0.5rem'
-		newSpanTitle.textContent = titles[!currentProject ? 1 : currentProject - 1]
+		newSpanTitle.textContent =
+			titles[!currentProject ? 1 : currentProject - 1]
 		titleRef.current?.appendChild(newSpanTitle)
 
 		const newSpanCounter = document.createElement('span')
 		Object.assign(newSpanCounter.style, textStyle)
-		newSpanCounter.textContent = currentProject != titles.length - 1 ? `PROJECT / NO.0${currentProject + 1}` : 'COME SOON'
+		newSpanCounter.textContent =
+			currentProject != titles.length - 1
+				? `PROJECT / NO.0${currentProject + 1}`
+				: 'COME SOON'
 		counterRef.current?.appendChild(newSpanCounter)
 	}
 
@@ -87,7 +91,10 @@ const ProjectsTiles = ({ currentProject = 0 }: { currentProject: number }) => {
 
 		const newSpanCounter = document.createElement('span')
 		Object.assign(newSpanCounter.style, textStyle)
-		newSpanCounter.textContent = currentProject != titles.length - 1 ? `PROJECT / NO.0${currentProject + 1}` : 'COME SOON'
+		newSpanCounter.textContent =
+			currentProject != titles.length - 1
+				? `PROJECT / NO.0${currentProject + 1}`
+				: 'COME SOON'
 		counterRef.current?.appendChild(newSpanCounter)
 
 		animation(titleRef, isFirstRender)
@@ -95,17 +102,24 @@ const ProjectsTiles = ({ currentProject = 0 }: { currentProject: number }) => {
 	}, [currentProject])
 
 	return (
-		<div className={cn("PROJECTS_TITLE relative z-10 text-center select-none", currentProject != titles.length - 1 ? 'cursor-pointer' : 'cursor-auto')}>
+		<div
+			className={cn(
+				'PROJECTS_TITLE relative z-10 select-none text-center',
+				currentProject != titles.length - 1
+					? 'cursor-pointer'
+					: 'cursor-auto'
+			)}
+		>
 			<p
 				ref={counterRef}
-				className="PROJECT_COUNTER relative overflow-hidden font-mono text-white"
+				className="PROJECT_COUNTER text-offwhite relative overflow-hidden font-mono"
 				style={{ height: `calc(${fontSize['p']} + 0.5rem)` }}
 			>
 				<span className="mt-1 block w-full"></span>
 			</p>
 			<h5
 				ref={titleRef}
-				className="TITLE_WRAPPER relative overflow-hidden font-bold uppercase text-white"
+				className="TITLE_WRAPPER text-offwhite relative overflow-hidden font-bold uppercase"
 				style={{ height: `calc(${fontSize['h5']} + 0.5rem)` }}
 			>
 				<span className="mt-1 block w-full"></span>
